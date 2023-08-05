@@ -111,7 +111,7 @@ async def stream(
                     photo=img,
                     caption=_["stream_1"].format(
                         title[:27],
-                        f"https://t.me/{app.username}?mstart=info_{vidid}",
+                        f"https://t.me/{app.username}?start=info_{vidid}",
                         duration_min,
                         user_name,
                     ),
@@ -200,7 +200,7 @@ async def stream(
                     photo=img,
                     caption=_["stream_1"].format(
                         title[:27],
-                        f"https://t.me/{app.username}?mstart=info_{vidid}",
+                        f"https://t.me/{app.username}?start=info_{vidid}",
                         duration_min,
                         user_name,
                     ),
@@ -374,7 +374,7 @@ async def stream(
                 photo=img,
                 caption=_["stream_1"].format(
                     title[:27],
-                    f"https://t.me/{app.username}?mstart=info_{vidid}",
+                    f"https://t.me/{app.username}?start=info_{vidid}",
                     duration_min,
                     user_name,
                 ),
