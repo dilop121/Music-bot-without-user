@@ -87,7 +87,7 @@ async def gen_thumb(videoid, user_id):
         image2 = image1.convert("RGBA")
         background = image2.filter(filter=ImageFilter.BoxBlur(25))
         enhancer = ImageEnhance.Brightness(background)
-        background = enhancer.enhance(0.6)
+        background = enhancer.enhance(0.8)
 
         image3 = changeImageSize(1280, 720, bg)
         image5 = image3.convert("RGBA")
