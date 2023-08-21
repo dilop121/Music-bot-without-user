@@ -50,13 +50,13 @@ async def gen_thumb(videoid, user_id):
                 duration = "Unknown"
             thumbnail = result["thumbnails"][0]["url"].split("?")[0]
             try:
-                result["viewCount"]["short"]
+                views = result["viewCount"]["short"]
             except:
-                pass
+                views = "Unknown Views"
             try:
-                result["channel"]["name"]
+                channel = result["channel"]["name"]
             except:
-                pass
+                channel = "Unknown Channel"
 
         async with aiohttp.ClientSession() as session:
             async with session.get(thumbnail) as resp:
@@ -124,12 +124,10 @@ async def gen_thumb(videoid, user_id):
         para = textwrap.wrap(title, width=28)
         try:
             draw.text(
-                (50, 25),
-                f"STARTED PLAYING",
-                fill="white",
-                stroke_width=3,
-                stroke_fill="grey",
-                font=font,
+                (55, 560),
+            f"{channel} | {views[:23]}",
+            (255, 255, 255),
+            font=arial,
             )
             if para[0]:
                 text_w, text_h = draw.textsize(f"{para[0]}", font=font)
@@ -190,13 +188,13 @@ async def gen_qthumb(videoid, user_id):
                 duration = "Unknown"
             thumbnail = result["thumbnails"][0]["url"].split("?")[0]
             try:
-                result["viewCount"]["short"]
+                views = result["viewCount"]["short"]
             except:
-                pass
+                views = "Unknown Views"
             try:
-                result["channel"]["name"]
+                channel = result["channel"]["name"]
             except:
-                pass
+                channel = "Unknown Channel"
 
         async with aiohttp.ClientSession() as session:
             async with session.get(thumbnail) as resp:
@@ -264,12 +262,10 @@ async def gen_qthumb(videoid, user_id):
         para = textwrap.wrap(title, width=28)
         try:
             draw.text(
-                (455, 25),
-                "ADDED TO QUEUE",
-                fill="white",
-                stroke_width=5,
-                stroke_fill="black",
-                font=font,
+            (55, 560),
+            f"{channel} | {views[:23]}",
+            (255, 255, 255),
+            font=arial,
             )
             if para[0]:
                 text_w, text_h = draw.textsize(f"{para[0]}", font=font)
