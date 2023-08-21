@@ -132,7 +132,7 @@ async def gen_thumb(videoid, user_id):
                 font=font,
             )
             if para[0]:
-                text_w, text_h = draw.textsize(f"{para[0]} {para[1]}", font=font)
+                text_w, text_h = draw.textsize(f"{para[0]}", font=font)
                 draw.text(
                     ((1280 - 1150) / 3.50, 590),
                     f"{para[0]} {para[1]}",
@@ -275,7 +275,7 @@ async def gen_qthumb(videoid, user_id):
                 text_w, text_h = draw.textsize(f"{para[0]}", font=font)
                 draw.text(
                     ((1280 - 1150) / 3.50, 590),
-                    f"{para[0] para[0]}",
+                    f"{para[0]} {para[0]}",
                     fill="white",
                     stroke_width=1,
                     stroke_fill="white",
