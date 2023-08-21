@@ -109,19 +109,19 @@ async def gen_thumb(videoid, user_id):
 
         crop_img = Image.open(f"cache/cropped{videoid}.png")
         logo = crop_img.convert("RGBA")
-        logo.thumbnail((200, 200), Image.LANCZOS)
-        width = int((1280 - 200) / 25)
+        logo.thumbnail((1, 1), Image.LANCZOS)
+        width = int((1280 - 1) / 2)
         background = Image.open(f"cache/temp{videoid}.png")
         background.paste(logo, (width + 3, 290), mask=logo)
         background.paste(x, (1050, 250), mask=x)
         background.paste(image3, (0, 0), mask=image3)
 
         draw = ImageDraw.Draw(background)
-        font = ImageFont.truetype("AnonX/assets/font2.ttf", 40)
-        ImageFont.truetype("AnonX/assets/font2.ttf", 65)
-        arial = ImageFont.truetype("AnonX/assets/font2.ttf", 25)
-        ImageFont.truetype("AnonX/assets/font.ttf", 25)
-        para = textwrap.wrap(title, width=30)
+        font = ImageFont.truetype("AnonX/assets/font2.ttf", 37)
+        ImageFont.truetype("AnonX/assets/font2.ttf", 62)
+        arial = ImageFont.truetype("AnonX/assets/font2.ttf", 23)
+        ImageFont.truetype("AnonX/assets/font.ttf", 23)
+        para = textwrap.wrap(title, width=29)
         try:
             draw.text(
                 (50, 25),
